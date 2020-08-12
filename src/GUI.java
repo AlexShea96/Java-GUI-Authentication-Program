@@ -25,7 +25,7 @@ public class GUI implements ActionListener {
 
     boolean authenticateName = false;
     boolean authenticatePassword = false; //initialized booleans for authentication.
-    boolean test = false;
+
 
     public static void main(String[] args) throws IOException {
         JPanel panel = new JPanel(); //Creates Panel Object
