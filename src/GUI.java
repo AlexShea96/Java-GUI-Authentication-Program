@@ -1,15 +1,8 @@
-import javax.imageio.ImageIO;
+//Author Alex Shea - Graphical User Interface Authentication Program
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.image.BufferedImage;
-import java.io.File;
 import java.io.IOException;
-
-
-//Author Alex Shea - Graphical User Interface Authentication Program
-
 
 public class GUI implements ActionListener {
     //Create variables store user input, user variables verify user input.
@@ -32,6 +25,7 @@ public class GUI implements ActionListener {
 
     boolean authenticateName = false;
     boolean authenticatePassword = false; //initialized booleans for authentication.
+    boolean test = false;
 
     public static void main(String[] args) throws IOException {
         JPanel panel = new JPanel(); //Creates Panel Object
