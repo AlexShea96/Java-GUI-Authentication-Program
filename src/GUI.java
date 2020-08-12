@@ -114,15 +114,18 @@ public class GUI implements ActionListener {
         createName = userText.getText(); //gets user input text from user text field to create user.
         createPassword = passwordText.getText(); //gets user input from password field to create password.
 
+        if (createName.length() == 0 || createPassword.length() == 0) {
+            return;
+        }
 
-
-            success.setText("Welcome to Shea Technology " + createName + ", you may now login.");
-            userLabel.setText("Enter Username: "); //changes user label text to enter username.
-            passwordLabel.setText("Enter Password: "); //changes password label text to enter password.
-            userText.setText(""); //clears text field.
-            passwordText.setText(""); //clears password field.
-            createButton.setVisible(true); //hides creation button rather than changing the button text alone.
-            loginButton.setVisible(true);  //separate login button appears if created credentials match themselves.
+        //Move to new login panel.
+        success.setText("Welcome to Shea Technology " + createName + ", you may now login.");
+        userLabel.setText("Enter Username: "); //changes user label text to enter username.
+        passwordLabel.setText("Enter Password: "); //changes password label text to enter password.
+        userText.setText(""); //clears text field.
+        passwordText.setText(""); //clears password field.
+        createButton.setVisible(true); //hides creation button rather than changing the button text alone.
+        loginButton.setVisible(true);  //separate login button appears if created credentials match themselves.
 
         //Action Listener for the "Login" button, what happens when the button is clicked.
         loginButton.addActionListener(new ActionListener() {
@@ -131,8 +134,8 @@ public class GUI implements ActionListener {
 
                 userName = userText.getText(); //stores usertext field in userName to be verified later.
                 userPassword = passwordText.getText(); //stores password field in userPassword to be verified later.
-                authenticateName = userName.equals(createName); //verifies if the login username matches the created username.
-                authenticatePassword = userPassword.equals(createPassword); //verifies if the login password matches the created password.
+                authenticateName = userName.equals(createName); //Boolean verifies if the login username matches the created username.
+                authenticatePassword = userPassword.equals(createPassword); //Boolean verifies if the login password matches the created password.
 
                 if (!authenticateName || !authenticatePassword) { //conditional AND If * If username and password are both incorrect then:
 
