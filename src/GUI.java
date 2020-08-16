@@ -1,8 +1,10 @@
 //Author Alex Shea - Graphical User Interface Authentication Program
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.IOException;
+
+
 
 public class GUI implements ActionListener {
     //Create variables store user input, user variables verify user input.
@@ -20,14 +22,9 @@ public class GUI implements ActionListener {
     private static JButton loginButton;
     private static JLabel authenticationApology;
     private static JLabel welcomeMessage;
-    private static JLabel userOptions;
-    private static JLabel emptyMessage;
-
-    boolean authenticateName = false;
-    boolean authenticatePassword = false; //initialized booleans for authentication.
 
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         JPanel panel = new JPanel(); //Creates Panel Object
         JFrame frame = new JFrame(); //Creates Frame Object
 
@@ -38,18 +35,13 @@ public class GUI implements ActionListener {
         frame.add(panel); //adds panel to the frame.
 
 
-
-
-
         //Panel methods
         panel.setBorder(BorderFactory.createEmptyBorder(30, 30, 10, 30)); //panel dimensions
         panel.setLayout(null);
 
 
-
-
-        userOptions = new JLabel("Hello!, Welcome to Shea Technologies! Please Login. Don't have an account? Select Create Account.");
-        userOptions.setBounds(50, 20, 750, 50);
+        JLabel userOptions = new JLabel("Hello!, Welcome to Shea Technologies! Please Login." + " Don't have an account? Select Create Account.");
+        userOptions.setBounds(10, 20, 750, 50);
         panel.add(userOptions);
 
         userLabel = new JLabel("Create Username: "); //Creates Label object for creating username.
@@ -82,7 +74,6 @@ public class GUI implements ActionListener {
         loginButton.addActionListener(new GUI());
 
 
-
         success = new JLabel(""); //creates label after action listener button if statement is successful (Below).
         success.setBounds(75, 250, 400, 25);
         panel.add(success);
@@ -93,28 +84,22 @@ public class GUI implements ActionListener {
         panel.add(welcomeMessage);
 
 
-         
-
-
         authenticationApology = new JLabel(""); //failed login message, left empty to cal conditional method later.
         authenticationApology.setBounds(10, 110, 400, 25);
         panel.add(authenticationApology);
-
-
 
         frame.setVisible(true); //makes the frame visible and within focus.
     }
 
     @Override //Action Listener for "Create Account" button, what happens when the button is clicked.
     public void actionPerformed(ActionEvent e) {
-        JPanel panel = new JPanel(); //new panel
-        JFrame frame = new JFrame(); //new frame
-
 
         createName = userText.getText(); //gets user input text from user text field to create user.
         createPassword = passwordText.getText(); //gets user input from password field to create password.
 
-        if (createName.length() == 0 || createPassword.length() == 0) {
+
+
+        if (createName.length() == 0 || createPassword.length() == 0) { //Doesn't allow user to proceed if field is blank.
             return;
         }
 
@@ -124,7 +109,7 @@ public class GUI implements ActionListener {
         passwordLabel.setText("Enter Password: "); //changes password label text to enter password.
         userText.setText(""); //clears text field.
         passwordText.setText(""); //clears password field.
-        createButton.setVisible(true); //hides creation button rather than changing the button text alone.
+        createButton.setVisible(false); //hides creation button upon creating account info.
         loginButton.setVisible(true);  //separate login button appears if created credentials match themselves.
 
         //Action Listener for the "Login" button, what happens when the button is clicked.
@@ -134,8 +119,8 @@ public class GUI implements ActionListener {
 
                 userName = userText.getText(); //stores usertext field in userName to be verified later.
                 userPassword = passwordText.getText(); //stores password field in userPassword to be verified later.
-                authenticateName = userName.equals(createName); //Boolean verifies if the login username matches the created username.
-                authenticatePassword = userPassword.equals(createPassword); //Boolean verifies if the login password matches the created password.
+                boolean authenticateName = userName.equals(createName); //verifies if the login username matches the created username.
+                boolean authenticatePassword = userPassword.equals(createPassword); //verifies if the login password matches the created password.
 
                 if (!authenticateName || !authenticatePassword) { //conditional AND If * If username and password are both incorrect then:
 
@@ -149,6 +134,7 @@ public class GUI implements ActionListener {
                     passwordText.setText("");
                     success.setVisible(false);
                     authenticationApology.setVisible(false);
+                    loginButton.setVisible(false);
                     welcomeMessage.setText("Welcome " + (createName) + ", to Shea Technology's Login Server!");
 
                 }
