@@ -5,6 +5,9 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 
 public class GUI implements ActionListener {
 
@@ -25,7 +28,7 @@ public class GUI implements ActionListener {
     String createPassword = "";
 
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         JPanel panel = new JPanel(); //Creates Panel Object
         JFrame frame = new JFrame(); //Creates Frame Object
 
@@ -36,12 +39,18 @@ public class GUI implements ActionListener {
         frame.add(panel); //adds panel to the frame.
 
 
+
+
         //Panel methods
         panel.setBorder(BorderFactory.createEmptyBorder(30, 30, 10, 30)); //panel dimensions
         panel.setLayout(new BorderLayout());
         panel.setBackground(Color.gray); //sets panel background color to gray.
 
-        //Jpanel background TEST*****
+        //Jpanel background
+        JLabel panelBackground = new JLabel(new ImageIcon(ImageIO.read(GUI.class.getResource("Shelter.png"))));
+        frame.setContentPane(panelBackground);
+        frame.setLayout(new BorderLayout());
+
 
 
         //Text fields and Labels.
@@ -52,27 +61,27 @@ public class GUI implements ActionListener {
 
         userLabel = new JLabel("Create Username: "); //Creates Label object for creating username.
         userLabel.setBounds(75, 150, 125, 25); //sets label parameters for username
-        panel.add(userLabel); //adds label to panel.
+        frame.add(userLabel);
 
         userText = new JTextField(20); //Creates Text Field object and sets length of text field for username.
         userText.setBounds(200, 150, 165, 25); //sets text field parameters for username.
-        panel.add(userText); //adds the text field to the panel.
+        frame.add(userText); //adds the text field to the panel.
 
 
         passwordLabel = new JLabel("Create Password: "); //Creates Label object for creating password.
         passwordLabel.setBounds(75, 175, 125, 25); //sets label parameters for password.
-        panel.add(passwordLabel); //adds password label to panel.
+        frame.add(passwordLabel); //adds password label to panel.
 
         passwordText = new JPasswordField(); //Creates Password Field object and sets length of field for password.
         passwordText.setBounds(200, 175, 165, 25); //sets password field parameters for password.
-        panel.add(passwordText); //adds the password text field to the panel.
+        frame.add(passwordText); //adds the password text field to the panel.
 
 
         //Java Buttons
 
         createButton = new JButton("Create Account"); //Creates button to create account.
         createButton.setBounds(142, 80, 125, 25); //sets parameters of the size of the button.
-        panel.add(createButton);
+        frame.add(createButton);
 
         createButton.addActionListener(new GUI()); //adds an action to the create account button from implemented action listener.
         createButton.setBackground(Color.darkGray);
@@ -81,7 +90,7 @@ public class GUI implements ActionListener {
 
         loginButton = new JButton("Login"); //creates login button.
         loginButton.setBounds(300, 80, 125, 25);
-        panel.add(loginButton);
+        frame.add(loginButton);
 
         loginButton.addActionListener(new GUI()); //adds an action to the login account button from implemented action listener.
         loginButton.setBackground(Color.darkGray);
@@ -90,17 +99,17 @@ public class GUI implements ActionListener {
 
         success = new JLabel(""); //creates label after action listener button if statement is successful (Below).
         success.setBounds(75, 250, 400, 25);
-        panel.add(success);
+        frame.add(success);
 
 
         welcomeMessage = new JLabel(""); //successful login message, left empty to call conditional method later.
         welcomeMessage.setBounds(75, 250, 400, 25);
-        panel.add(welcomeMessage);
+        frame.add(welcomeMessage);
 
 
         authenticationApology = new JLabel(""); //failed login message, left empty to call conditional method later.
         authenticationApology.setBounds(10, 110, 400, 25);
-        panel.add(authenticationApology);
+        frame.add(authenticationApology);
 
         frame.setVisible(true); //makes the frame visible and within focus.
     }
