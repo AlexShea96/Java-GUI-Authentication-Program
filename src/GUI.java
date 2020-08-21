@@ -1,5 +1,6 @@
 //Author Alex Shea - Graphical User Interface Authentication Program
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -37,8 +38,11 @@ public class GUI implements ActionListener {
 
         //Panel methods
         panel.setBorder(BorderFactory.createEmptyBorder(30, 30, 10, 30)); //panel dimensions
-        panel.setLayout(null);
+        panel.setLayout(new BorderLayout());
         panel.setBackground(Color.gray); //sets panel background color to gray.
+
+        //Jpanel background TEST*****
+
 
         //Text fields and Labels.
 
@@ -70,7 +74,7 @@ public class GUI implements ActionListener {
         createButton.setBounds(142, 80, 125, 25); //sets parameters of the size of the button.
         panel.add(createButton);
 
-        createButton.addActionListener(new GUI()); //adds an action to the create account button from implemented action lister.
+        createButton.addActionListener(new GUI()); //adds an action to the create account button from implemented action listener.
         createButton.setBackground(Color.darkGray);
         createButton.setForeground(Color.WHITE);
 
@@ -79,7 +83,7 @@ public class GUI implements ActionListener {
         loginButton.setBounds(300, 80, 125, 25);
         panel.add(loginButton);
 
-        loginButton.addActionListener(new GUI());
+        loginButton.addActionListener(new GUI()); //adds an action to the login account button from implemented action listener.
         loginButton.setBackground(Color.darkGray);
         loginButton.setForeground(Color.WHITE);
 
@@ -101,7 +105,7 @@ public class GUI implements ActionListener {
         frame.setVisible(true); //makes the frame visible and within focus.
     }
 
-    @Override //Action Listener for "Create Account" button, what happens when the button is clicked.
+     //Action Listener for "Create Account" button, what happens when the button is clicked.
     public void actionPerformed(ActionEvent e) {
 
         createName = userText.getText(); //gets user input text from user text field to create user.
@@ -119,38 +123,33 @@ public class GUI implements ActionListener {
         loginButton.setVisible(true);  //separate login button appears if created credentials match themselves.
 
         //Action Listener for the "Login" button, what happens when the button is clicked.
-        loginButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                //Authentication
+        loginButton.addActionListener(e1 -> { //lambda
+            //Authentication
 
-                userName = userText.getText(); //stores userText field in userName to be verified later.
-                userPassword = passwordText.getText(); //stores password field in userPassword to be verified later.
+            userName = userText.getText(); //stores userText field in userName to be verified later.
+            userPassword = passwordText.getText(); //stores password field in userPassword to be verified later.
 
-                boolean authenticateName = userName.equals(createName); //verifies if the login username matches the created username.
-                boolean authenticatePassword = userPassword.equals(createPassword); //verifies if the login password matches the created password.
+            boolean authenticateName = userName.equals(createName); //verifies if the login username matches the created username.
+            boolean authenticatePassword = userPassword.equals(createPassword); //verifies if the login password matches the created password.
 
-                if (!authenticateName || !authenticatePassword) { //conditional AND If * If username and password are both incorrect then:
+            if (!authenticateName || !authenticatePassword) { //conditional If username and password are both incorrect then:
 
-                    authenticationApology.setText("Sorry, Incorrect Username or Password, try again!"); //apology label.
-                    success.setVisible(false); //hides the welcome message from creating the account.
-                    userText.setText(""); //clears the text field
-                    passwordText.setText(""); //clears the text field.
+                authenticationApology.setText("Sorry, Incorrect Username or Password, try again!"); //apology label.
+                success.setVisible(false); //hides the welcome message from creating the account.
+                userText.setText(""); //clears the text field
+                passwordText.setText(""); //clears the text field.
 
-                } else { //hide the entire Login interface and display the welcome message after being authorized.
-                    userText.setText("");
-                    passwordText.setText("");
-                    success.setVisible(false);
-                    authenticationApology.setVisible(false);
-                    loginButton.setVisible(false);
-                    welcomeMessage.setText("Welcome " + (createName) + ", to Shea Technology's Login Server!");
+            } else { //hide the entire Login interface and displays the welcome message after being authorized.
+                userText.setText("");
+                passwordText.setText("");
+                success.setVisible(false);
+                authenticationApology.setVisible(false);
+                loginButton.setVisible(false);
+                welcomeMessage.setText("Welcome " + (createName) + ", to Shea Technology's Login Server!");
 
-                }
+            }
 
-                }
-
-
-        });
+            });
 
     }
 }
