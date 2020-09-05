@@ -49,7 +49,7 @@ public class GUI implements ActionListener {
         //Jpanel background
         JLabel panelBackground = new JLabel(new ImageIcon(ImageIO.read(GUI.class.getResource("Shelter.png"))));
         frame.setContentPane(panelBackground);
-        frame.setLayout(new BorderLayout());
+
 
 
 
@@ -60,20 +60,20 @@ public class GUI implements ActionListener {
         panel.add(userOptions);
 
         userLabel = new JLabel("Create Username: "); //Creates Label object for creating username.
-        userLabel.setBounds(75, 150, 125, 25); //sets label parameters for username
+        userLabel.setBounds(125, 150, 125, 25); //sets label parameters for username
         frame.add(userLabel);
 
         userText = new JTextField(20); //Creates Text Field object and sets length of text field for username.
-        userText.setBounds(200, 150, 165, 25); //sets text field parameters for username.
+        userText.setBounds(250, 150, 165, 25); //sets text field parameters for username.
         frame.add(userText); //adds the text field to the panel.
 
 
         passwordLabel = new JLabel("Create Password: "); //Creates Label object for creating password.
-        passwordLabel.setBounds(75, 175, 125, 25); //sets label parameters for password.
+        passwordLabel.setBounds(125, 175, 125, 25); //sets label parameters for password.
         frame.add(passwordLabel); //adds password label to panel.
 
         passwordText = new JPasswordField(); //Creates Password Field object and sets length of field for password.
-        passwordText.setBounds(200, 175, 165, 25); //sets password field parameters for password.
+        passwordText.setBounds(250, 175, 165, 25); //sets password field parameters for password.
         frame.add(passwordText); //adds the password text field to the panel.
 
 
