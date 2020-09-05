@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8d5bd29d-acd2-48a5-9239-03868b2526fa" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -108,7 +107,14 @@
       <option name="project" value="LOCAL" />
       <updated>1598036732099</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Realigned Labels and text fields to be more legible with the frames background image.">
+      <created>1599275578967</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1599275578967</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -119,7 +125,8 @@
     <MESSAGE value="Changed button background color and text color. Changed panel background color. reorganized code. minor refactor." />
     <MESSAGE value="Removed null from panel layout to prevent issues later. - minor refactor." />
     <MESSAGE value="Added a panel background as a new JLabel, made the background image an Image Icon, set the new JLabel as the frame's contentPane, set the frames layout to border, and added all existing labels, buttons, and text fields to frame instead of panel to prevent image overlap. - Major refactor." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added a panel background as a new JLabel, made the background image an Image Icon, set the new JLabel as the frame's contentPane, set the frames layout to border, and added all existing labels, buttons, and text fields to frame instead of panel to prevent image overlap. - Major refactor." />
+    <MESSAGE value="Realigned Labels and text fields to be more legible with the frames background image." />
+    <option name="LAST_COMMIT_MESSAGE" value="Realigned Labels and text fields to be more legible with the frames background image." />
   </component>
   <component name="WindowStateProjectService">
     <state x="137" y="18" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1598390632593">
@@ -130,35 +137,35 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="432" y="200" key="#com.intellij.ide.actions.ChooseComponentsToExportDialog/0.0.1366.728/-1440.-227.1440.860/1366.-100.1024.728@0.0.1366.728" timestamp="1598393740738" />
-    <state x="128" y="0" width="1107" height="720" key="CommitChangelistDialog2" timestamp="1598036731606">
+    <state x="128" y="0" width="1107" height="720" key="CommitChangelistDialog2" timestamp="1599275578326">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="128" y="0" width="1107" height="720" key="CommitChangelistDialog2/0.0.1366.728/-1440.-227.1440.860/1366.-100.1024.728@0.0.1366.728" timestamp="1598036731606" />
+    <state x="128" y="0" width="1107" height="720" key="CommitChangelistDialog2/0.0.1366.728/-1440.-227.1440.860/1366.-100.1024.728@0.0.1366.728" timestamp="1599275578326" />
     <state x="474" y="156" key="FileChooserDialogImpl" timestamp="1598393889025">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="-940" y="-43" key="FileChooserDialogImpl/0.0.1366.728/-1440.-227.1440.860/1366.-100.1024.728@-1440.-227.1440.860" timestamp="1592050312911" />
     <state x="474" y="156" key="FileChooserDialogImpl/0.0.1366.728/-1440.-227.1440.860/1366.-100.1024.728@0.0.1366.728" timestamp="1598393889025" />
-    <state width="1323" height="183" key="GridCell.Tab.0.bottom" timestamp="1599275463719">
+    <state width="1323" height="183" key="GridCell.Tab.0.bottom" timestamp="1599275601505">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1323" height="147" key="GridCell.Tab.0.bottom/-1440.-227.1440.860/1366.-100.1024.728/0.0.1366.728@0.0.1366.728" timestamp="1598246152193" />
-    <state width="1323" height="183" key="GridCell.Tab.0.bottom/0.0.1366.728/-1440.-227.1440.860/1366.-100.1024.728@0.0.1366.728" timestamp="1599275463719" />
-    <state width="1323" height="183" key="GridCell.Tab.0.center" timestamp="1599275463719">
+    <state width="1323" height="183" key="GridCell.Tab.0.bottom/0.0.1366.728/-1440.-227.1440.860/1366.-100.1024.728@0.0.1366.728" timestamp="1599275601505" />
+    <state width="1323" height="183" key="GridCell.Tab.0.center" timestamp="1599275601505">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1323" height="147" key="GridCell.Tab.0.center/-1440.-227.1440.860/1366.-100.1024.728/0.0.1366.728@0.0.1366.728" timestamp="1598246152193" />
-    <state width="1323" height="183" key="GridCell.Tab.0.center/0.0.1366.728/-1440.-227.1440.860/1366.-100.1024.728@0.0.1366.728" timestamp="1599275463719" />
-    <state width="1323" height="183" key="GridCell.Tab.0.left" timestamp="1599275463718">
+    <state width="1323" height="183" key="GridCell.Tab.0.center/0.0.1366.728/-1440.-227.1440.860/1366.-100.1024.728@0.0.1366.728" timestamp="1599275601505" />
+    <state width="1323" height="183" key="GridCell.Tab.0.left" timestamp="1599275601505">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1323" height="147" key="GridCell.Tab.0.left/-1440.-227.1440.860/1366.-100.1024.728/0.0.1366.728@0.0.1366.728" timestamp="1598246152192" />
-    <state width="1323" height="183" key="GridCell.Tab.0.left/0.0.1366.728/-1440.-227.1440.860/1366.-100.1024.728@0.0.1366.728" timestamp="1599275463718" />
-    <state width="1323" height="183" key="GridCell.Tab.0.right" timestamp="1599275463719">
+    <state width="1323" height="183" key="GridCell.Tab.0.left/0.0.1366.728/-1440.-227.1440.860/1366.-100.1024.728@0.0.1366.728" timestamp="1599275601505" />
+    <state width="1323" height="183" key="GridCell.Tab.0.right" timestamp="1599275601505">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1323" height="147" key="GridCell.Tab.0.right/-1440.-227.1440.860/1366.-100.1024.728/0.0.1366.728@0.0.1366.728" timestamp="1598246152193" />
-    <state width="1323" height="183" key="GridCell.Tab.0.right/0.0.1366.728/-1440.-227.1440.860/1366.-100.1024.728@0.0.1366.728" timestamp="1599275463719" />
+    <state width="1323" height="183" key="GridCell.Tab.0.right/0.0.1366.728/-1440.-227.1440.860/1366.-100.1024.728@0.0.1366.728" timestamp="1599275601505" />
     <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1598036739210">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
